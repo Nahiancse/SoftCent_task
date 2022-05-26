@@ -50,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             ElevatedButton(
                 onPressed: () {
-                  Get.to(() => SingleDataScreen());
+                  Get.to(() => DataScreen());
                 },
                 child: Text('Fetch Data'))
           ],

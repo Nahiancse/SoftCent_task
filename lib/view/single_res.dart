@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'controller/single_data_controller.dart';
+
+import '../controller/single_data_controller.dart';
+// import 'controller/single_data_controller.dart';
 
 class SingleDataScreen extends StatefulWidget {
   const SingleDataScreen({Key? key}) : super(key: key);
