@@ -38,30 +38,32 @@ class _DataScreenState extends State<DataScreen> {
             ? Center(
                 child: CircularProgressIndicator(),
               )
-            : Column(
-              children: [
+            : SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
 
 ///////////////////////////////////////////////////////////
-                Expanded(
-                  
-                  child: Container(
+
+                  Container(
                     margin: EdgeInsets.all(22),
-                    // height: 800,
+                    // height: ,
                   child: Column(
                      crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height:42),
+                    
                     Row(
-              children: [
+                       
+                children: [
                     Image.asset('asset/gitIcon.png',height: 24,width: 24,),
                     SizedBox(width: 11,),
-                    Text('Discount on the all food',style: TextStyle(fontSize: 30,color: Color(0xff000000),fontWeight: FontWeight.w500),),
+                    Text('Discount on the all food',style: TextStyle(fontSize: 28,color: Color(0xff000000),fontWeight: FontWeight.w500),),
                     
-              ],
-            ),
-            SizedBox(height:21),
+                ],
+              ),
+              SizedBox(height:21),
                     Container(
-                      height: 500,
+                      height: 200,
                       width: double.infinity,
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
@@ -81,7 +83,7 @@ class _DataScreenState extends State<DataScreen> {
 
                             return Container(
                              margin: EdgeInsets.only(right:20),
-                              height: 500,
+                              height: 200,
                        width: 250,
                                
                               child: Column(
@@ -97,7 +99,7 @@ class _DataScreenState extends State<DataScreen> {
                                 SizedBox(height: 8,),
                                 Row(
                                   children: [
-                                    Text(name,style: TextStyle(fontSize: 24,fontWeight: FontWeight.w500,color: Color(0xff040415
+                                    Text(name,style: TextStyle(fontSize: 22,fontWeight: FontWeight.w500,color: Color(0xff040415
                                   )),),
                                   Spacer(),
                                   Icon(Icons.star,color: Colors.yellow,size: 14,),
@@ -128,8 +130,172 @@ class _DataScreenState extends State<DataScreen> {
                   ],
                   ),
                   ),
-                ),
 /////////////////////////////////////////////////////////////////////////////////////////////////////
+  SizedBox(height: 23,),
+  Container(
+                    margin: EdgeInsets.only(left:22),
+                    // height: ,
+                  child: Column(
+                     crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    
+                    Row(
+                       
+                children: [
+                 
+                    Text('Exclusive cashback offer',style: TextStyle(fontSize: 28,color: Color(0xff000000),fontWeight: FontWeight.w500),),
+                    
+                ],
+              ),
+              SizedBox(height:21),
+                    Container(
+                      height: 210,
+                      width: double.infinity,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        shrinkWrap: true,
+                          itemCount: dataController.result_list!.result!.length,
+                          itemBuilder: (context, index) {
+                            String image = '';
+                            String name = '';
+                            String subtitle = '';
+
+                            try {
+                              image = dataController.result_list!.result![index].image!;
+                            } catch (e) {}
+                            try {
+                              name = dataController.result_list!.result![index].businessname!;
+                            } catch (e) {}
+
+                            return Container(
+                             margin: EdgeInsets.only(right:20),
+                              height: 210,
+                       width: 250,
+                               
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(15),
+                                    child: Image(image: NetworkImage(image,),height: 104,
+  width: double.infinity,
+  fit: BoxFit.fill,),
+                                  ),
+                                  
+                                SizedBox(height: 8,),
+                                Row(
+                                  children: [
+                                    Text(name,style: TextStyle(fontSize: 22,fontWeight: FontWeight.w500,color: Color(0xff040415
+                                  )),),
+                                  Spacer(),
+                                  Icon(Icons.star,color: Colors.yellow,size: 14,),
+                                   Text('4.6',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color: Color(0xff040415
+                                  )),),
+
+                                  ],
+                                ),
+                                SizedBox(height: 2,),
+                                Flexible(
+                                  child: Text('Cashback offer 20% of all food',style: TextStyle(fontSize: 24,fontWeight: FontWeight.w400,color: Color(0xff040415
+),),),
+                                ),
+// SizedBox(width: 20,),
+
+                                ],
+                              ),
+                            );
+                            
+                            
+                          }),
+                    ),
+                  ],
+                  ),
+                  ),
+ 
+
+///////////////////////////////
+
+  SizedBox(height:22),
+ Container(
+                    margin: EdgeInsets.all(22),
+                    // height: ,
+                  child: Column(
+                     crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    
+                    Row(
+                     
+                      crossAxisAlignment: CrossAxisAlignment.start, 
+                children: [
+                    Image.asset('asset/gitIcon.png',height: 24,width: 24,),
+                    SizedBox(width: 11,),
+                    Flexible(child: Text('Discount on some selected items',style: TextStyle(fontSize: 28,color: Color(0xff000000),fontWeight: FontWeight.w500),)),
+                    
+                ],
+              ),
+              SizedBox(height:21),
+                    Container(
+                      height: 200,
+                      width: double.infinity,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        shrinkWrap: true,
+                          itemCount: dataController.result_list!.result!.length,
+                          itemBuilder: (context, index) {
+                            String image = '';
+                            String name = '';
+                            String subtitle = '';
+
+                            try {
+                              image = dataController.result_list!.result![index].image!;
+                            } catch (e) {}
+                            try {
+                              name = dataController.result_list!.result![index].businessname!;
+                            } catch (e) {}
+
+                            return Container(
+                             margin: EdgeInsets.only(right:20),
+                              height: 200,
+                       width: 250,
+                               
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(15),
+                                    child: Image(image: NetworkImage(image,),height: 104,
+  width: double.infinity,
+  fit: BoxFit.fill,),
+                                  ),
+                                  
+                                SizedBox(height: 8,),
+                                Row(
+                                  children: [
+                                    Text(name,style: TextStyle(fontSize: 22,fontWeight: FontWeight.w500,color: Color(0xff040415
+                                  )),),
+                                  Spacer(),
+                                  Icon(Icons.star,color: Colors.yellow,size: 14,),
+                                   Text('4.6',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color: Color(0xff040415
+                                  )),),
+
+                                  ],
+                                ),
+                                SizedBox(height: 2,),
+                                Text('Tallinn,Estonia',style: TextStyle(fontSize: 24,fontWeight: FontWeight.w400,color: Color(0xff040415
+),),),
+// SizedBox(width: 20,),
+
+                                ],
+                              ),
+                            );
+                            
+                             
+                          }),
+                    ),
+                  ],
+                  ),
+                  ),
+ //////////////////
 
 
 
@@ -137,11 +303,42 @@ class _DataScreenState extends State<DataScreen> {
 
 
 
+                  
 
-                
+                  
+                ],
+              ),
+            )),
+            
+            
+       
+            floatingActionButton:FloatingActionButton( //Floating action button on Scaffold
+      onPressed: (){
+          //code to execute on button press
+      },
+      child: Icon(Icons.send), //icon inside button
+  ),
 
-                
-              ],
-            )));
+  floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+  //floating action button position to center
+
+  bottomNavigationBar: BottomAppBar( //bottom navigation bar on scaffold
+    color:Colors.redAccent,
+    shape: CircularNotchedRectangle(), //shape of notch
+    notchMargin: 5, //notche margin between floating button and bottom appbar
+    child: Row( //children inside bottom appbar
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: <Widget>[
+        Image.asset('asset/gitIcon.png',height: 24,width: 24,),
+        IconButton(icon: Icon(Icons.search, color: Colors.white,), onPressed: () {},),
+        IconButton(icon: Icon(Icons.print, color: Colors.white,), onPressed: () {},),
+        IconButton(icon: Icon(Icons.people, color: Colors.white,), onPressed: () {},),
+      ],
+    ),
+  ),
+    );
+            
+            
   }
 }
