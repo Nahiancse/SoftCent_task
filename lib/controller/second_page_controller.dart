@@ -4,10 +4,10 @@ import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
 // import '../model/model.dart';
-import '../model/single_model.dart';
+import '../model/second_page_model.dart';
 
-class SingleDataController extends GetxController {
-  Single_Res? single_result_list;
+class SecondPage_Controller extends GetxController {
+  SecondPage_Model? single_result_list;
   var isDataLoading = false.obs;
   getUserInformationFrinApi() async {
     try {
@@ -17,7 +17,7 @@ class SingleDataController extends GetxController {
 
       if (response.statusCode == 200) {
         var result = jsonDecode(response.body);
-        single_result_list = Single_Res.fromJson(result);
+        single_result_list = SecondPage_Model.fromJson(result);
       } else {}
     } catch (e) {
       print('error $e');

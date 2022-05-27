@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:softcent_task/view/all_res.dart';
-import 'package:softcent_task/view/single_res.dart';
+import 'package:softcent_task/view/first_page.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -14,40 +14,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
        
         primarySwatch: Colors.blue,
       ),
-      home: const HomeScreen(),
+      home: const DataScreen(),
     );
   }
 }
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
-
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Nahian')),
-      body: Container(
-        width: double.infinity,
-        child: Column(
-          children: [
-            ElevatedButton(
-                onPressed: () {
-                  Get.to(() => DataScreen());
-                },
-                child: Text('Fetch Data'))
-          ],
-        ),
-      ),
-    );
-  }
-}

@@ -3,10 +3,10 @@ import 'dart:convert';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
-import '../model/model.dart';
+import '../model/first_page_model.dart';
 
-class DataController extends GetxController {
-  Model_data? result_list;
+class FirstPage_Controller extends GetxController {
+  FirstPage_Model? result_list;
   var isDataLoading = false.obs;
   getUserInformationFrinApi() async {
     try {
@@ -16,7 +16,7 @@ class DataController extends GetxController {
 
       if (response.statusCode == 200) {
         var result = jsonDecode(response.body);
-        result_list = Model_data.fromJson(result);
+        result_list = FirstPage_Model.fromJson(result);
       } else {}
     } catch (e) {
       print('error $e');
